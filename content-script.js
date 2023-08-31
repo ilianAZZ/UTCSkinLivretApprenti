@@ -1,3 +1,136 @@
+/**
+ * Check if the version of the extension is the latest by
+ * comparing the version in the manifest.json and the one in the github repo
+ */
+const isExtensionLastVersion = () => {
+    const manifest = chrome.runtime.getManifest();
+    const version = manifest.version;
+    const url =
+        "https://raw.githubusercontent.com/IlianAZZ/UTCSkinLivretApprenti/main/manifest.json";
+    // sync request
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, false);
+    xhr.send();
+
+    const latestVersion = JSON.parse(xhr.responseText).version;
+
+    return version == latestVersion;
+};
+
+/*
+Checking if the extension is the latest version,
+if not, display a warning message
+*/
+const createAlertIfNotLastVersion = () => {
+    if (!isExtensionLastVersion()) {
+        const div = document.createElement("div");
+        div.classList.add("alert");
+
+        div.innerHTML = `
+		<div>
+			<h1>ATTENTION</h1>
+			<p>Votre extension n'est pas à jour, veuillez la mettre à jour en suivant les instructions :</p>
+
+			<p>Rendez-vous sur la <a target=_blank href="https://github.com/ilianAZZ/UTCSkinLivretApprenti">page github</a>, tout en bas dans la section "Mise à jour"</p>
+			
+			
+			<button onclick="this.parentElement.parentElement.remove()" type="button" class="btn-close" >X</button>
+		</div>
+		<style>
+			.alert {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+
+				width: 40%;
+				height: 50%;
+
+				background-color: #343a40;
+				padding: 20px;  
+				color: white;
+				text-align: center;
+				box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+			}	
+
+			.btn-close {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-color: transparent;
+				color: white;
+				border: none;
+				font-size: 1.5em;
+				cursor: pointer;
+
+			}
+
+		</style>
+	`;
+
+        document.body.prepend(div);
+    }
+};
+
+/**
+ *	Apply CSS for a specific page
+ */
+function cssForSpecificPage(page) {
+    if (page.startsWith("accueil.php")) {
+        createAlertIfNotLastVersion();
+    } else if (page.startsWith("sujet.php")) {
+        $("body > div").eq(1).addClass("div-contact");
+        $("<span class=get-infos>ⓘ</span>").insertAfter($("body > div").eq(1));
+        $(".get-infos").mouseenter((e) => {
+            $(".div-contact").show();
+        });
+        $(".get-infos").mouseleave((e) => {
+            $(".div-contact").hide();
+        });
+    } else if (page.startsWith("eval_sequences.php")) {
+        $("body > div").eq(3).addClass("float-top-left");
+    }
+}
+
+/**
+ * Perform a HTTP request to get the name and the company of the user (from the main page)
+ * Used if the data is not in the local storage
+ */
+function setNameAndCompanyFromWeb(storage) {
+    jQuery.ajax({
+        url: "./accueil.php",
+        success: (res) => {
+            const company = $(res).find("h3").eq(0).text();
+            chrome.storage.local.set({ companyName: company });
+            storage.companyName = company;
+
+            const name = $(res).find("h3").eq(1).find("font").text();
+            chrome.storage.local.set({
+                name: name,
+                company: storage.company,
+            });
+            storage.name = name;
+        },
+        async: false,
+    });
+}
+
+/**
+ * Perform a HTTP request to get the profile picture (from the main page)
+ * Used if the data is not in the local storage
+ */
+function setPictureFromWeb(storage) {
+    jQuery.ajax({
+        url: "./acteurs.php",
+        success: (res) => {
+            const picture = $(res).find(".contact_vert img").attr("src");
+            chrome.storage.local.set({ picture: picture });
+            storage.picture = picture;
+        },
+        async: false,
+    });
+}
+
 var style = document.createElement("style");
 document.documentElement.appendChild(style);
 
@@ -577,63 +710,6 @@ chrome.storage.local.get((result) => {
         });
     }
 });
-
-/**
- *	Apply CSS for a specific page
- */
-function cssForSpecificPage(page) {
-    if (page.startsWith("sujet.php")) {
-        $("body > div").eq(1).addClass("div-contact");
-        $("<span class=get-infos>ⓘ</span>").insertAfter($("body > div").eq(1));
-        $(".get-infos").mouseenter((e) => {
-            $(".div-contact").show();
-        });
-        $(".get-infos").mouseleave((e) => {
-            $(".div-contact").hide();
-        });
-    } else if (page.startsWith("eval_sequences.php")) {
-        $("body > div").eq(3).addClass("float-top-left");
-    }
-}
-
-/**
- * Perform a HTTP request to get the name and the company of the user (from the main page)
- * Used if the data is not in the local storage
- */
-function setNameAndCompanyFromWeb(storage) {
-    jQuery.ajax({
-        url: "./accueil.php",
-        success: (res) => {
-            const company = $(res).find("h3").eq(0).text();
-            chrome.storage.local.set({ companyName: company });
-            storage.companyName = company;
-
-            const name = $(res).find("h3").eq(1).find("font").text();
-            chrome.storage.local.set({
-                name: name,
-                company: storage.company,
-            });
-            storage.name = name;
-        },
-        async: false,
-    });
-}
-
-/**
- * Perform a HTTP request to get the profile picture (from the main page)
- * Used if the data is not in the local storage
- */
-function setPictureFromWeb(storage) {
-    jQuery.ajax({
-        url: "./acteurs.php",
-        success: (res) => {
-            const picture = $(res).find(".contact_vert img").attr("src");
-            chrome.storage.local.set({ picture: picture });
-            storage.picture = picture;
-        },
-        async: false,
-    });
-}
 
 /*
 Web pages :

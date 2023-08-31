@@ -43,3 +43,7 @@ J'ai pas fait les démarches pour le mettre sur le store, donc il faut l'install
 -   Selectionner le dossier "UTC-Skin-Livret-Apprentissage-main" (le dossier qui contient le fichier manifest.json),
 
 Et voilà, l'extension est installée !
+
+## Mise à jour
+
+En vrai de vrai faut refaire la même chose que pour l'installation.
