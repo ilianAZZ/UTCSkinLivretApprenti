@@ -1,0 +1,27 @@
+{
+    "name": "UTC Skin livret d'apprentissage",
+    "description": "That was a big 2010 design",
+    "author": "https://iazz.fr",
+    "version": "1.1",
+    "permissions": ["activeTab", "storage", "identity", "identity.email"],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://apprentissage.utc.fr/suivi/presentation/*"],
+            "js": ["jquery.min.js", "content-script.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "browser_action": {
+        "default_title": "UTC Skin livret d'apprentissage"
+    },
+    "manifest_version": 2,
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png",
+        "192": "icons/icon192.png"
+    }
+}
