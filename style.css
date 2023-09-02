@@ -138,30 +138,31 @@ a:hover img {
     border-color: var(--yellow-main) !important;
 }
 
-form .contact-rouge,
-form .contact-bleu,
-form .contact-jaune,
-form .contact-vert,
-form .contact-gris {
+form .contact_rouge,
+form .contact_bleu,
+form .contact_jaune,
+form .contact_vert,
+form .contact_gris {
     background: none;
     background-color: rgba(0, 0, 0, 0.2) !important;
     border: 1px solid var(--black-main) !important;
     box-shadow: none !important;
     color: var(--font-second) !important;
+    border-radius: 15px;
 }
-form .contact-rouge {
+form .contact_rouge {
     border-color: red !important;
 }
-form .contact-bleu {
+form .contact_bleu {
     border-color: blue !important;
 }
-form .contact-jaune {
+form .contact_jaune {
     border-color: yellow !important;
 }
-form .contact-vert {
+form .contact_vert {
     border-color: green !important;
 }
-form .contact-gris {
+form .contact_gris {
     border-color: grey !important;
 }
 

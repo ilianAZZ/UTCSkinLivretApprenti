@@ -2,7 +2,7 @@
     "name": "UTC Skin livret d'apprentissage",
     "description": "That was a big 2010 design",
     "author": "https://iazz.fr",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "manifest_version": 3,
     "permissions": ["storage", "activeTab"],
     "host_permissions": ["https://apprentissage.utc.fr/"],

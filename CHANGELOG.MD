@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.4
+
+Remise en place du style pour la page "contacts"
+
 # 2023-09-02 v1.3.3
 
 Changement de style des menus qui se déplient (Pages : Compétences, Evaluation en entreprise, Rapports)
