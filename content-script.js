@@ -75,7 +75,7 @@ const createAlertIfNotLastVersion = () => {
 /**
  *	Apply CSS for a specific page
  */
-function cssForSpecificPage(page) {
+const cssForSpecificPage = (page) => {
     if (page.startsWith("accueil.php")) {
         createAlertIfNotLastVersion();
     } else if (page.startsWith("sujet.php")) {
@@ -100,13 +100,13 @@ function cssForSpecificPage(page) {
             .querySelectorAll("body > div")[3]
             .classList.add("float-top-left");
     }
-}
+};
 
 /**
  * Perform a HTTP request to get the name and the company of the user (from the main page)
  * Used if the data is not in the local storage
  */
-function setNameAndCompanyFromWeb(storage) {
+const setNameAndCompanyFromWeb = (storage) => {
     const request = new XMLHttpRequest();
     request.open("GET", "./accueil.php", false);
     request.send(null);
@@ -127,7 +127,7 @@ function setNameAndCompanyFromWeb(storage) {
     });
 
     storage.name = name;
-}
+};
 
 const getCssFromFile = () => {
     const request = new XMLHttpRequest();
@@ -148,7 +148,7 @@ const insertCssInPage = () => {
  * Perform a HTTP request to get the profile picture (from the main page)
  * Used if the data is not in the local storage
  */
-function setPictureFromWeb(storage) {
+const setPictureFromWeb = (storage) => {
     const request = new XMLHttpRequest();
     request.open("GET", "./acteurs.php", false);
     request.send(null);
@@ -157,7 +157,7 @@ function setPictureFromWeb(storage) {
     const picture = html.split('src="')[1].split('"')[0];
     chrome.storage.local.set({ picture: picture });
     storage.picture = picture;
-}
+};
 
 const removeHash = () => {
     location.hash = "";
@@ -359,6 +359,9 @@ chrome.storage.local.get((result) => {
 
         document.body.innerHTML += text;
     }
+
+    /* Once finished, set the body visible */
+    document.body.style.cssText += ";visibility: visible !important;";
 });
 
 /*

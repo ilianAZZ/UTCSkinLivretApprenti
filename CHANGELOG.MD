@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.2
+
+Masquage du site avant de charger le style pour éviter le flash de l'ancien style
+
 # 2023-09-02 v1.3.1
 
 Suppression des permissions inutiles

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700;900&display=swap");
+
 html,
 body {
     margin: 0 !important;
@@ -5,6 +7,7 @@ body {
     background-color: var(--black-second) !important;
     background-image: none !important;
     color: var(--font-second) !important;
+    font-family: "Poppins", sans-serif !important;
 }
 
 h1,
@@ -56,8 +59,6 @@ a {
 a:hover {
     color: var(--yellow-second);
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700;900&display=swap");
 
 html,
 body {
