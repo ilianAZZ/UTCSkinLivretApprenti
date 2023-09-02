@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.0
+
+Passage du manifeste en v3 pour le mettre sur le store.
+
 # 2023-08-31 v1.2.1
 
 -   Ajout d'un troisième digit pour la version de l'extension, pour faire stylé (En vrai pour notifier des corrections de bugs)
