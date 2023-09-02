@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.1
+
+Suppression des permissions inutiles
+
 # 2023-09-02 v1.3.0
 
 Passage du manifeste en v3 pour le mettre sur le store.
