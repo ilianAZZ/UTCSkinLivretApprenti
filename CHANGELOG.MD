@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.3
+
+Changement de style des menus qui se déplient (Pages : Compétences, Evaluation en entreprise, Rapports)
+
 # 2023-09-02 v1.3.2
 
 Masquage du site avant de charger le style pour éviter le flash de l'ancien style
