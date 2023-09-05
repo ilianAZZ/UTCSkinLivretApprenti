@@ -1,3 +1,7 @@
+# 2023-09-02 v1.3.5
+
+Suppression permission "activeTab" inutile
+
 # 2023-09-02 v1.3.4
 
 Remise en place du style pour la page "contacts"
