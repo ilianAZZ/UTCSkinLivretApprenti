@@ -112,7 +112,8 @@ nav .nav-container a {
     border-radius: 5px;
 }
 nav .nav-container a:hover {
-    background-color: var(--yellow-main) !important;
+    background-color: var(--yellow-second) !important;
+    color: var(--black-main) !important;
 }
 
 form {
@@ -202,10 +203,10 @@ div.pop-visible {
     color: var(--font-second) !important;
     border: 2px solid var(--font-main) !important;
 }
-a.fermer:hover {
-}
-a.fermer:hover {
-}
+
+/*
+sidemenu pages : Missions et Evaluation en entreprise
+*/
 
 ul.sidemenu {
     position: absolute !important;
@@ -217,6 +218,36 @@ ul.sidemenu {
     margin-left: calc(18% + 70px) !important;
     margin-top: unset !important;
 }
+
+ul.sidemenu > * {
+    border: 1px solid var(--yellow-main) !important;
+    background-color: transparent !important;
+    padding: 10px 0 !important;
+}
+
+ul.sidemenu li.entr {
+    background-color: var(--yellow-main) !important;
+    padding: 10px !important;
+}
+
+ul.sidemenu li.entr a {
+    color: var(--black-main) !important;
+}
+ul.sidemenu > *:hover {
+    background-color: var(--yellow-second) !important;
+}
+ul.sidemenu > li a {
+    color: var(--yellow-main) !important;
+    padding: 10px !important;
+}
+ul.sidemenu > li a:hover {
+    color: var(--black-main) !important;
+}
+
+/*
+
+*/
+
 .div-contact {
     position: absolute !important;
     top: 5px;
@@ -424,4 +455,26 @@ table {
 
 .titre_evaluation > a:hover > img {
     margin: 2px;
+}
+
+/* Page "Evaluation en entreprise" */
+
+#form_annees {
+    margin-top: 0 !important;
+}
+#form_annees .sidemenu {
+    margin: 0 !important;
+    margin-left: 30px !important;
+}
+
+/**
+Global
+*/
+
+pre {
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
 }

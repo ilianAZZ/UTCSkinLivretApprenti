@@ -324,7 +324,9 @@ chrome.storage.local.get((result) => {
 
         // rewrite in native JS
         const currentPage = document.querySelector(`a[href='${title}']`);
-        currentPage.style.backgroundColor = yellow_second;
+        currentPage.style.backgroundColor = yellow_main;
+        currentPage.style.color = black_main;
+        currentPage.style.fontWeight = "bold";
         document.title = "Livret Apprentissage UTC - " + currentPage.text;
 
         // Favicon

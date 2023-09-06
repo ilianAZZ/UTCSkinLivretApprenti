@@ -1,3 +1,10 @@
+# 2023-09-06 v1.3.6
+
+-   Couleur noir du menu survolé et actif
+-   Boutons des onglets jaune (pages missions, évaluation en entreprise)
+-   Nav : inverser le hover / actif
+-   marge plus importante entre nav et contenu page évaluation en entreprise
+
 # 2023-09-02 v1.3.5
 
 Suppression permission "activeTab" inutile
