@@ -1,3 +1,7 @@
+# 2023-09-06 v1.3.7
+
+Informations récupérée via requete (nom, entreprise, photo) parsée avec parseur HTML.
+
 # 2023-09-06 v1.3.6
 
 -   Couleur noir du menu survolé et actif

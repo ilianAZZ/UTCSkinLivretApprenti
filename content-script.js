@@ -22,6 +22,7 @@ Checking if the extension is the latest version,
 if not, display a warning message
 */
 const createAlertIfNotLastVersion = () => {
+    return;
     if (!isExtensionLastVersion()) {
         const div = document.createElement("div");
         div.classList.add("alert");
@@ -111,16 +112,13 @@ const setNameAndCompanyFromWeb = (storage) => {
     request.open("GET", "./accueil.php", false);
     request.send(null);
     const html = request.responseText;
+    const node = new DOMParser().parseFromString(html, "text/html");
 
-    const company = html.split("<h3>")[1].split("</h3>")[0];
+    const company = node.querySelector("h3").innerText;
     chrome.storage.local.set({ companyName: company });
     storage.companyName = company;
 
-    const name = html
-        .split("<h3>")[2]
-        .split("</h3>")[0]
-        .split("<font>")[1]
-        .split("</font>")[0];
+    const name = node.querySelector("h3 font").innerHTML;
     chrome.storage.local.set({
         name: name,
         company: storage.company,
@@ -153,8 +151,9 @@ const setPictureFromWeb = (storage) => {
     request.open("GET", "./acteurs.php", false);
     request.send(null);
     const html = request.responseText;
+    const node = new DOMParser().parseFromString(html, "text/html");
 
-    const picture = html.split('src="')[1].split('"')[0];
+    const picture = node.querySelector(".contact_vert img").src;
     chrome.storage.local.set({ picture: picture });
     storage.picture = picture;
 };
