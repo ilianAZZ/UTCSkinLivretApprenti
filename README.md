@@ -23,27 +23,6 @@ Il y a que très peu de modifications d'élèments, c'est surtout du CSS.
 
 ## Installation
 
-J'ai pas fait les démarches pour le mettre sur le store, donc il faut l'installer manuellement.
+Disponible sur le [Chrome Web Store](https://chrome.google.com/webstore/detail/utc-skin-livret-dapprenti/npndhabplmlphcpmilmbehkgbkgidikp?hl=fr&authuser=0)
 
--   Télécharger le projet en cliquant sur le bouton vert "Code" puis "Download ZIP",
--   Extraire le dossier,
--   Activer le mode développeur dans votre navigateur,
-
-    -   Pour Chrome :
-        -   Aller sur [chrome://extensions/](chrome://extensions/),
-        -   Activer le mode développeur en haut à droite,
-    -   Pour Edge :
-        -   Aller sur [edge://extensions/](edge://extensions/),
-        -   Activer le mode développeur à gauche,
-    -   Pour Brave :
-        -   Aller sur [brave://extensions/](brave://extensions/),
-        -   Activer le mode développeur en haut à droite,
-
--   Charger l'extension non empaquetée,
--   Selectionner le dossier "UTC-Skin-Livret-Apprentissage-main" (le dossier qui contient le fichier manifest.json),
-
-Et voilà, l'extension est installée !
-
-## Mise à jour
-
-En vrai de vrai faut refaire la même chose que pour l'installation.
+https://chrome.google.com/webstore/detail/utc-skin-livret-dapprenti/npndhabplmlphcpmilmbehkgbkgidikp?hl=fr&authuser=0

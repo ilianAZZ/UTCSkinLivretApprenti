@@ -1,3 +1,7 @@
+# 2023-09-08 v1.4.0
+
+Le background des popups correspond à celui du site
+
 # 2023-09-06 v1.3.7
 
 Informations récupérée via requete (nom, entreprise, photo) parsée avec parseur HTML.

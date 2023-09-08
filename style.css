@@ -478,3 +478,19 @@ pre {
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
+/*
+Carnet de bord
+*/
+
+.pop_visible {
+    background-color: var(--black-second) !important;
+    color: var(--font-second) !important;
+    border: 1px solid var(--yellow-main) !important;
+
+    /* center the popup window */
+    position: absolute !important;
+    top: 10% !important;
+    left: 50% !important;
+    transform: translate(-50%, -10%) !important;
+}
