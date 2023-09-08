@@ -211,12 +211,13 @@ sidemenu pages : Missions et Evaluation en entreprise
 ul.sidemenu {
     position: absolute !important;
     margin: 0 !important;
+    left: 0 !important;
     float: none !important;
     list-style-type: none !important;
     transform: none !important;
     -webkit-transform: none !important;
-    margin-left: calc(18% + 70px) !important;
-    margin-top: unset !important;
+    margin-left: calc(18% + 10px + 30px) !important;
+    margin-top: 8px !important;
 }
 
 ul.sidemenu > * {
@@ -463,8 +464,8 @@ table {
     margin-top: 0 !important;
 }
 #form_annees .sidemenu {
-    margin: 0 !important;
-    margin-left: 30px !important;
+    /* margin: 0 !important; */
+    /* margin-left: 30px !important; */
 }
 
 /**

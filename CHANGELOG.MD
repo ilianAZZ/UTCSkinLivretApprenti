@@ -1,3 +1,7 @@
+# 2023-09-08 v1.5.0
+
+Les menus horizontaux (page missions et évaluation en entreprise) ne sont plus collés aux bords de la page.
+
 # 2023-09-08 v1.4.0
 
 Le background des popups correspond à celui du site
