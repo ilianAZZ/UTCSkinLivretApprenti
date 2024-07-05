@@ -1,3 +1,8 @@
+# 2024-07-05 v1.5.1
+
+Ajout d'un lien "Signaler un bug"dans le menu.
+Remplacement "Crédit" par "Crédit theme" dans le menu.
+
 # 2023-09-08 v1.5.0
 
 Les menus horizontaux (page missions et évaluation en entreprise) ne sont plus collés aux bords de la page.
