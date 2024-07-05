@@ -312,7 +312,7 @@ chrome.storage.local.get((result) => {
 			Envoie un mail a la <a href="mailto:3333@utc.fr">hotline</a>
 		</div>
 		<div class=footer style="margin-top:15px;">
-			Crédit : <a target="_blank" href="https://ilianazz.com">Ilian A</a> &copy; 2020 - ${new Date().getFullYear()} 
+			Crédit Theme : <a target="_blank" href="https://ilianazz.com">Ilian A</a> &copy; 2020 - ${new Date().getFullYear()}. <a target="_blank" href="https://ilianazz.com/contact">Signaler un bug</a>
 		</div>`;
 
         document.body.prepend(header);
